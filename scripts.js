@@ -120,12 +120,12 @@ const totalTime = (x) => {
   return `${hrs}:${min}`;
 };
 
+
 const newElement = (x) => {
   //created a variable for to reference the objects when calling the functions
   const objName = x.dataset.athlete;
   const h2 = document.createElement("h2");
-  h2.setAttribute("id", x.dataset.athlete);
-  h2.textContent = `Athlete: ${x.dataset.athlete}`;
+  h2.textContent = `Athlete ID: ${data.response.data[objName].id}`;
   const added = x.appendChild(h2);
   const dl = document.createElement("dl");
   //Athlete's name
