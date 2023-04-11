@@ -1,0 +1,21 @@
+
+   dl {
+        display: flex;
+        flex-flow: row wrap;
+        border: solid #000;
+        border-width: 2px
+      }
+      dt {
+        flex-basis: 20%;
+        padding: 3px 4px;
+        background: #000;
+        text-align: right;
+        color: #fff;
+      }
+      dd {
+        flex-basis: 70%;
+        flex-grow: 1;
+        margin: 0;
+        padding: 4px 4px;
+        border-bottom: 1px solid;
+      }
