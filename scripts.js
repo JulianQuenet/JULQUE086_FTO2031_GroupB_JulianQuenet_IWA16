@@ -70,7 +70,7 @@ const section2 = document.querySelector("section:nth-of-type(2)");
 /**Function to get full name
  *
  * @param {object} x
- * @returns The full name associated with the object
+ * @returns {string}
  */
 const fullName = (x) => {
   const name = `${x.firstName}  ${x.surname}`;
@@ -80,7 +80,7 @@ const fullName = (x) => {
 /**Function to get total races from associated object
  *
  * @param {object} x
- * @returns The amount of races by using the length method
+ * @returns {number}
  */
 const totalRaces = (x) => {
   const races = x.races.length;
@@ -90,7 +90,7 @@ const totalRaces = (x) => {
 /**Function to get the latest race date from the associated object
  *
  * @param {object} x
- * @returns The date in the dd/mm/year format
+ * @returns {string}
  */
 const latestDate = (x) => {
   const date = new Date(x.races[x.races.length - 1].date);
@@ -105,7 +105,7 @@ const latestDate = (x) => {
  * race in minutes from the associated object
  *
  * @param {object} x
- * @returns The total amount of time in minutes in the hh/mm format
+ * @returns {string}
  */
 const totalTime = (x) => {
   const time = x.races[x.races.length - 1].time;
