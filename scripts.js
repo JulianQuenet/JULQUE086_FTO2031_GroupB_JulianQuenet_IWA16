@@ -128,36 +128,17 @@ const newElement = (x) => {
   h2.textContent = `Athlete ID: ${data.response.data[objName].id}`;
   const added = x.appendChild(h2);
   const dl = document.createElement("dl");
-  //Athlete's name
-  const dt1 = document.createElement("dt");
-  dt1.textContent = "Athlete:";
-  const dd1 = document.createElement("dd");
-  dd1.textContent = fullName(data.response.data[objName]);
-  //Total Races
-  const dt2 = document.createElement("dt");
-  dt2.textContent = "Total Races:";
-  const dd2 = document.createElement("dd");
-  dd2.textContent = totalRaces(data.response.data[objName]);
-  //Event date (latest)
-  const dt3 = document.createElement("dt");
-  dt3.textContent = "Event Date (Latest):";
-  const dd3 = document.createElement("dd");
-  dd3.textContent = latestDate(data.response.data[objName]);
-  //Total race time (latest)
-  const dt4 = document.createElement("dt");
-  dt4.textContent = "Total race time (latest):";
-  const dd4 = document.createElement("dd");
-  dd4.textContent = totalTime(data.response.data[objName]);
-
+  const dlInner = `<dt>Athlete:</dt>
+  <dd>${fullName(data.response.data[objName])}</dd>
+  <dt>Total Races:</dt>
+  <dd>${totalRaces(data.response.data[objName])}</dd>
+  <dt>Event date (Latest):</dt>
+  <dd>${latestDate(data.response.data[objName])}</dd>
+  <dt>Total race time (latest)</dt>
+  <dd>${totalTime(data.response.data[objName])}</dd>`
+  dl.innerHTML = dlInner
+ 
   //Appending all additions to the DOM
-  dl.appendChild(dt1);
-  dl.appendChild(dd1);
-  dl.appendChild(dt2);
-  dl.appendChild(dd2);
-  dl.appendChild(dt3);
-  dl.appendChild(dd3);
-  dl.appendChild(dt4);
-  dl.appendChild(dd4);
   added.appendChild(dl);
   return added;
 };
